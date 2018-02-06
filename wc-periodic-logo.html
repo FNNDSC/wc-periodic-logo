@@ -1,0 +1,119 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="wc-periodic-logo">
+  <template>
+    <style>
+      :host {
+          --default-primary-color: #212121;
+          --dark-primary-color: #212121;
+          --light-primary-color: #757575;
+          --accent-color: #009688;
+      }
+
+      .container {
+        font-family: sans-serif;
+        color: #fff;
+        font-weight: lighter;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+
+        background: var(--default-primary-color);
+        background: -webkit-linear-gradient(130deg, var(--light-primary-color) 0%, var(--dark-primary-color) 75%, var(--accent-color) 100%);
+        background: -moz-linear-gradient(130deg, var(--light-primary-color) 0%, var(--dark-primary-color) 75%, var(--accent-color) 100%);
+        background: -o-linear-gradient(130deg, var(--light-primary-color) 0%, var(--dark-primary-color) 75%, var(--accent-color) 100%);
+        background: linear-gradient(130deg, var(--light-primary-color) 0%, var(--dark-primary-color) 75%, var(--accent-color) 100%);
+        /* box-shadow:inset 0px 2px 2px rgba(75,75,75,.6);   */
+
+        display: inline-flex;
+        position: relative;
+
+        font-size: 32px;
+        padding: 14px 9px 4px;
+        border:2px solid #fff
+      }
+
+      .container.big {
+        font-size: 92px;
+        padding: 16px 12px 8px;
+        border:3px solid #fff;
+      }
+
+      .container.small {
+        font-size: 22px;
+        padding: 12px 8px 4px;
+        border:1px solid #fff;
+      }
+
+      .container.xsmall {
+        font-size: 18px;
+        padding: 8px 6px 4px;
+        border:1px solid #fff;
+      }
+
+      .number {
+        position: absolute;
+        color: var(--accent-color);
+        opacity: 0.8;
+
+        top: 4px;
+        right: 4px;
+        font-size: 12px;
+        font-weight: lighter;
+      }
+
+      .number.big {
+        top: 6px;
+        right: 6px;
+        font-size: 14px;
+      }
+
+      .number.small {
+        top: 1px;
+        right: 1px;
+        font-size: 11px;
+        opacity: 1;
+        padding: 1px;
+        /* background: rgba(0, 0, 0, .2); */
+      }
+
+      .number.xsmall {
+        display: none;
+      }
+    </style>
+
+    <div class$="container {{size}}">
+      [[element]]
+      <div class$="number {{size}}">
+        [[number]]
+      </div>
+    </div>
+  </template>
+
+  <script>
+    class WCPeriodicLogo extends Polymer.Element {
+      static get is() {
+        return 'wc-periodic-logo';
+      }
+
+      static get properties() {
+        return {
+          size: {
+            type: String,
+            value: 'normal',
+          },
+          element: {
+            type: String,
+            value: '',
+          },
+          number: {
+            type: String,
+            value: ''
+          }
+        };
+      }
+    }
+
+    window.customElements.define(WCPeriodicLogo.is, WCPeriodicLogo);
+  </script>
+</dom-module>

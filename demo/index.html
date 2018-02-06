@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>wc-periodic-logo demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../wc-periodic-logo.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+        .gold {
+          --accent-color: #ffeb3b;
+        }
+
+        .radium {
+          --accent-color: #009688
+        }
+
+        .rehnium {
+          --accent-color: #00bcd4
+        }
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Normal wc-periodic-logo demo</h3>
+      <demo-snippet>
+        <template>
+          <wc-periodic-logo
+            class="gold"
+            element="Au"
+            number="v2.2">
+        </wc-periodic-logo>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>Small wc-periodic-logo demo</h3>
+      <demo-snippet>
+        <template>
+          <wc-periodic-logo
+            class="radium"
+            size="small"
+            element="Ra"
+            number="v0.2">
+        </wc-periodic-logo>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>XSmall wc-periodic-logo demo</h3>
+      <demo-snippet>
+        <template>
+          <wc-periodic-logo
+            size="xsmall"
+            element="O"
+            number="v2.2">
+        </wc-periodic-logo>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>Big wc-periodic-logo demo</h3>
+      <demo-snippet>
+        <template>
+          <wc-periodic-logo
+            class="rehnium"
+            size="big"
+            element="Re"
+            number="v3.2">
+        </wc-periodic-logo>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
